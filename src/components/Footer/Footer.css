@@ -1,0 +1,332 @@
+
+.footerSection{
+
+    position:relative;
+
+    padding:
+    0 5% 40px;
+
+    background:#0d0d0d;
+
+    overflow:hidden;
+
+    /* REMOVE THIS */
+    /* border-top:1px solid #1f1f1f; */
+}
+
+/* AMBIENT GLOW */
+
+.footerSection::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:#d9b06110;
+
+    filter:blur(140px);
+
+    border-radius:50%;
+
+    top:-220px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    animation:
+    footerGlow 8s ease-in-out infinite;
+}
+
+@keyframes footerGlow{
+
+    0%{
+        transform:
+        translateX(-50%)
+        translateY(0px);
+    }
+
+    50%{
+        transform:
+        translateX(-50%)
+        translateY(30px);
+    }
+
+    100%{
+        transform:
+        translateX(-50%)
+        translateY(0px);
+    }
+}
+
+/* GRID */
+
+.footerGrid{
+
+    position:relative;
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:70px;
+
+    padding:
+    90px 0 70px;
+
+    /* KEEP ONLY BOTTOM BORDER */
+
+    border-bottom:
+    1px solid #1f1f1f;
+}
+
+/* BLOCK */
+
+.footerBlock{
+
+    transition:
+    transform 0.4s ease;
+}
+
+.footerBlock:hover{
+
+    transform:
+    translateY(-4px);
+}
+
+.footerBlock h3{
+
+    color:var(--primary);
+
+    font-size:0.95rem;
+
+    letter-spacing:4px;
+
+    margin-bottom:30px;
+
+    text-transform:uppercase;
+}
+
+/* LINKS */
+
+.footerBlock button,
+.footerBlock a,
+.footerBlock p{
+
+    display:block;
+
+    background:none;
+    border:none;
+
+    color:var(--secondary);
+
+    text-decoration:none;
+
+    margin-bottom:18px;
+
+    font-size:0.95rem;
+
+    line-height:1.9;
+
+    transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.footerBlock button{
+
+    cursor:pointer;
+
+    padding:0;
+
+    text-align:left;
+}
+
+.footerBlock button:hover,
+.footerBlock a:hover{
+
+    color:var(--light);
+
+    transform:
+    translateX(5px);
+}
+
+/* TERMS */
+
+.termsText{
+
+    max-width:260px;
+}
+
+/* BOTTOM */
+
+.footerBottom{
+
+    position:relative;
+    z-index:2;
+
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.footerBottom p{
+
+    color:#6d6d6d;
+
+    letter-spacing:1px;
+
+    font-size:0.9rem;
+}
+
+/* BUTTON */
+
+.scrollTopBtn{
+
+    width:54px;
+    height:54px;
+
+    border-radius:50%;
+
+    border:
+    1px solid #2b2b2b;
+
+    background:#111111;
+
+    color:var(--light);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:
+    0.4s ease;
+
+    backdrop-filter:
+    blur(10px);
+}
+
+.scrollTopBtn:hover{
+
+    background:var(--primary);
+
+    color:#0d0d0d;
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 10px 30px #d9b06140;
+}
+
+.footerCredit{
+
+    color:#6d6d6d;
+
+    letter-spacing:1px;
+
+    font-size:0.9rem;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    flex-wrap:wrap;
+}
+
+.footerCredit span{
+
+    color:#ff5f7a;
+
+    animation:heartBeat 2s ease infinite;
+}
+
+@keyframes heartBeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .footerSection{
+
+        padding:
+        0 24px 40px;
+    }
+
+    .footerGrid{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+        padding:
+        70px 0 50px;
+    }
+
+    .footerBottom{
+
+        flex-direction:column;
+
+        gap:24px;
+
+        text-align:center;
+    }
+
+    .footerBottom p{
+
+        font-size:0.82rem;
+    }
+}
+
+.footerCredit{
+
+    justify-content:center;
+
+    text-align:center;
+
+    font-size:0.8rem;
+
+    line-height:1.8;
+}
+
+@media(max-width:768px){
+
+    .footerBlock button,
+    .footerBlock a,
+    .footerBlock p{
+
+        font-size:0.82rem;
+        line-height:1.8;
+    }
+
+    .footerBlock h3{
+
+        font-size:0.75rem;
+        letter-spacing:3px;
+    }
+}

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html,
+body,
+#root{
+
+    width:100%;
+    min-height:100%;
+
+    overflow-x:hidden;
+}
+
+:root{
+
+  --bg-color:#0d0d0d;
+
+  --primary:#d9b061;
+
+  --secondary:#8D6F57;
+
+  --light:#e7decd;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+
+  scroll-behavior:smooth;
+}
+
+body{
+
+  background:var(--bg-color);
+
+  color:var(--light);
+
+  font-family:'Poppins',sans-serif;
+
+  overflow-x:hidden;
+
+  position:relative;
+}
+
+/* PREMIUM NOISE TEXTURE */
+
+body::before{
+
+  content:'';
+
+  position:fixed;
+
+  inset:0;
+
+  background-image:
+  url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
+  opacity:0.035;
+
+  pointer-events:none;
+
+  z-index:9999;
+}
+
+/* SMOOTH FONT RENDER */
+
+body,
+button,
+input,
+textarea{
+
+  -webkit-font-smoothing:antialiased;
+
+  -moz-osx-font-smoothing:grayscale;
+}
+
+a{
+
+  text-decoration:none;
+
+  color:inherit;
+}
+
+button{
+
+  border:none;
+
+  outline:none;
+
+  cursor:pointer;
+
+  font-family:'Poppins',sans-serif;
+
+  background:none;
+}
+
+section{
+
+  width:100%;
+}
+
+/* SELECTION COLOR */
+
+::selection{
+
+  background:var(--primary);
+
+  color:#0d0d0d;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#0d0d0d;
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:#d9b06155;
+
+  border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+  background:#d9b061aa;
+}
+
+html.lenis,
+html.lenis body{
+  height:auto;
+}
+
+.lenis.lenis-smooth{
+  scroll-behavior:auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent]{
+  overscroll-behavior:contain;
+}
+
+.lenis.lenis-stopped{
+  overflow:hidden;
+}
